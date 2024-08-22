@@ -119,7 +119,7 @@ function mostrarNavBar()
                </div>
                <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
                   <li class="nav-item">
-                        <a class="nav-link" href="registro.php">
+                        <a class="nav-link" href="VistaAlquilerCasas.php">
                            <i class="fa fa-plus"></i>
                         </a>
                   </li>

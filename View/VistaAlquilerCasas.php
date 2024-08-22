@@ -25,24 +25,24 @@ include_once '../Controller/CasasController.php'; ?>
                                     }
                                     ?>
                                     <form action="" method="post">
-                                        <!-- dropdown descripción pero solo casas no alquiladas-->
                                         <div class="form-group">
-                                        <label for="compras">Descripción</label>
-                                            <select id="compras" name="compra" class="form-control" onchange="mostrarSaldoAnterior();" required>
-                                                <?php ConsultarCompras(); ?>
+                                            <label for="idCasa">Descripción</label>
+                                            <select id="idCasa" name="idCasa" class="form-control" onchange="mostrarPrecio();" required>
+                                                <?php ConsultarCasasDisponibles(); ?>
                                             </select>
                                         </div>
 
                                         <div class="form-group">
-                                            <label for="saldoAnterior">Precio Casa</label>
-                                            <input readOnly class="form-control" type="text" id="saldoAnterior" name="saldoAnterior" placeholder="" required>
+                                            <label for="precioCasa">Precio Casa (Mensual)</label>
+                                            <input readOnly class="form-control" type="text" id="precioCasa" name="precioCasa" placeholder="" required>
                                         </div>
                                         <div class="form-group">
-                                            <!-- Validar que tenga Información-->
-                                            <label for="abono">Información de usuario</label>
-                                            <input class="form-control" type="double" id="abono" name="abono" placeholder="" required onkeyup="validarMontoAbono();" readonly>
+                                            <label for="usuario">Información de usuario</label>
+                                            <input class="form-control" type="double" id="usuario" name="usuario" placeholder="" required onkeyup="validarMontoAbono();" readonly>
                                         </div>
-                                        <button type="submit" id="btnRegistro" name="btnRegistro" class="btn btn-primary">Abonar</button>
+                                        <div class="form-group">
+                                            <button type="submit" id="btnReserva" name="btnReserva" class="btn btn-primary">Reservar</button>
+                                        </div>
                                     </form>
                                     <div class="mt-4">
                                     </div>
@@ -63,7 +63,6 @@ include_once '../Controller/CasasController.php'; ?>
     </div>
 
     <?php scripts(); ?>
-    <script src="dist/js/productos.js"></script>
     <script src="../View/assets/js/registro.js"></script>
     <script src="../View/assets/js/validarAbono.js"></script>
 

@@ -1,23 +1,22 @@
-function mostrarSaldoAnterior() {
+function mostrarPrecio() {
 
-    var selectCompra = document.getElementById("compras");
-    var inputAbono = document.getElementById("abono");
+    var selectCasa = document.getElementById("idCasa");
+    var inputPrecio = document.getElementById("precioCasa");
 
-    var idCompra = selectCompra.value;
+    var idCasa = selectCasa.value;
 
     $.ajax({
         type: 'POST',
-        url: '../Controller/registrosController.php',
+        url: '../Controller/CasasController.php',
         dataType: 'text',
         data: {
-            "mostrarSaldo": "FUNCION",
-            "idCompra": idCompra,
+            "mostrarPrecio": "FUNCION",
+            "idCasa": idCasa,
         },
         success: function (respuesta) {
-            var saldoAnterior = document.getElementById("saldoAnterior");
-            inputAbono.setAttribute("max", respuesta);
-            inputAbono.removeAttribute("readonly");
-            saldoAnterior.value = respuesta;
+            var inputUsuario = document.getElementById("usuario");
+            inputPrecio.value = respuesta;
+            inputUsuario.removeAttribute("readonly");
         }
     });
 

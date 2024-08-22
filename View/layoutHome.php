@@ -52,11 +52,11 @@ function mostrarContenido()
          <div class="page-inner">
             <div class="page-inner-top">
                <div class="mt-2 mb-4">
-                  <h2 class="text-white pb-1">Bienvenid@!</h2>
-                  <h5 class="text-white op-7 mb-4">Deseas alquilar una casa? Consulta en nuestro menú! </h5>
+                  <h2 class="text-white pb-1 display-3">Bienvenid@!</h2>
+                  <h5 class="text-white op-7 mb-4">Deseas alquilar una casa? Consulta en nuestro menú lateral! </h5>
                </div>
                <div >
-                <img src="https://images.pexels.com/photos/2078478/pexels-photo-2078478.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="img-fluid" alt="..."> 
+                <img src="https://www.bbva.com/wp-content/uploads/2021/04/casas-ecolo%CC%81gicas_apertura-hogar-sostenibilidad-certificado-.jpg" class="img-fluid">
                 </div>
                            <div class="separator-dashed"></div>
                         </div>
@@ -90,7 +90,7 @@ function mostrarNavBar()
    <div class="main-header">
       <div class="logo-header" data-background-color="dark2">
             <a href="home.php" class="logo">
-               <i class="bi bi-brilliance mx-3 text-white"></i>
+               <i class="fa fa-house mx-3 text-white"></i>
                <span class="text-white pb-1" style="font-weight: bold; font-size: 18px;"> CasoEstudio #2 </span>
             </a>
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,11 +118,6 @@ function mostrarNavBar()
                   </form>
                </div>
                <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
-                  <li class="nav-item">
-                        <a class="nav-link" href="VistaAlquilerCasas.php">
-                           <i class="fa fa-plus"></i>
-                        </a>
-                  </li>
                   <li class="nav-item dropdown hidden-caret">
                         <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false">
                         </a>
@@ -150,12 +145,6 @@ function mostrarSideBar()
    <div class="sidebar sidebar-style-2" data-background-color="dark2">
       <div class="sidebar-wrapper scrollbar scrollbar-inner">
          <div class="sidebar-content">
-            <div class="user">
-               <div class="avatar-sm float-left mr-2">
-                 
-               </div>
-               
-            </div>
             <ul class="nav nav-primary">
                <li class="nav-item active">
                   <a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">

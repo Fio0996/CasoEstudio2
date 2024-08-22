@@ -31,9 +31,7 @@ include_once '../Controller/CasasController.php'; ?>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php
-                                                ConsultarDatos();
-                                                ?>
+                                                <?php ConsultarCasas(); ?>
                                             </tbody>
                                         </table>
                                     </div>

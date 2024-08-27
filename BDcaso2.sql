@@ -1,6 +1,6 @@
 CREATE DATABASE  IF NOT EXISTS `casoestudiomn` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
 USE `casoestudiomn`;
--- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: casoestudiomn
 -- ------------------------------------------------------
@@ -29,7 +29,7 @@ CREATE TABLE `casassistema` (
   `DescripcionCasa` varchar(30) NOT NULL,
   `PrecioCasa` decimal(10,2) NOT NULL,
   `UsuarioAlquiler` varchar(30) DEFAULT NULL,
-  `FechaAlquiler` datetime DEFAULT NULL,
+  `FechaAlquiler` date DEFAULT NULL,
   PRIMARY KEY (`idCasa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -40,7 +40,7 @@ CREATE TABLE `casassistema` (
 
 LOCK TABLES `casassistema` WRITE;
 /*!40000 ALTER TABLE `casassistema` DISABLE KEYS */;
-INSERT INTO `casassistema` VALUES (1,'Preciosa casa en Barva',200000.00,NULL,NULL),(2,'Preciosa casa en Desamparados',150000.00,NULL,NULL),(3,'Preciosa casa en San Rafael',175000.00,'Juan Pérez','2024-08-22 15:37:41'),(4,'Preciosa casa en Fraijanes',145000.00,'Juanito Perez','2024-08-22 16:19:21'),(5,'Preciosa casa en Puntarenas',157000.00,NULL,NULL);
+INSERT INTO `casassistema` VALUES (1,'Preciosa casa en Barva',200000.00,NULL,NULL),(2,'Preciosa casa en Desamparados',150000.00,'Ari','2024-08-27'),(3,'Preciosa casa en San Rafael',175000.00,'Juan Pérez','2024-08-22'),(4,'Preciosa casa en Fraijanes',145000.00,'Juanito Perez','2024-08-22'),(5,'Preciosa casa en Puntarenas',157000.00,NULL,NULL);
 /*!40000 ALTER TABLE `casassistema` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,7 +72,7 @@ BEGIN
             ELSE 'Reservada' 
         END 
         AS Estado,
-        FechaAlquiler
+        DATE_FORMAT(FechaAlquiler, '%d/%m/%Y') AS FechaAlquiler
     FROM casoestudiomn.casassistema
     WHERE PrecioCasa BETWEEN 115000 AND 180000
     ORDER BY Estado ASC;
@@ -93,28 +93,6 @@ DELIMITER ;
 /*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCasasDisponibles`()
-BEGIN
-			SELECT idCasa, DescripcionCasa
-            FROM casassistema
-            WHERE UsuarioAlquiler IS NULL
-            AND FechaAlquiler IS NULL;
-END ;;
-DELIMITER ;
-/*!50003 SET sql_mode              = @saved_sql_mode */ ;
-/*!50003 SET character_set_client  = @saved_cs_client */ ;
-/*!50003 SET character_set_results = @saved_cs_results */ ;
-/*!50003 SET collation_connection  = @saved_col_connection */ ;
-/*!50003 DROP PROCEDURE IF EXISTS `ConsultarCasasVistaAlquiler` */;
-/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
-/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
-/*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
-/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_ZERO_IN_DATE,NO_ZERO_DATE,NO_ENGINE_SUBSTITUTION' */ ;
-DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `ConsultarCasasVistaAlquiler`()
 BEGIN
 			SELECT idCasa, DescripcionCasa
             FROM casassistema
@@ -186,4 +164,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-08-22 16:25:13
+-- Dump completed on 2024-08-27 13:27:30
